@@ -10,10 +10,9 @@ steps:
     name: 'gcr.io/cloud-builders/git'
     dir: /builder/home/
     args: ['clone', 'https://github.com/tapwater/cloud-build-test.git']
-
-  # run maven
-  - id: 'maven-dotnet'
-    name: 'gcr.io/${PROJECT_ID}/cloud-builders/mvn-dotnet:${_MVN_DOTNET_VERSION}'
+  - id: 'git'
+    waitFor: ['-']
+    name: 'gcr.io/cloud-builders/git'
     entrypoint: '/bin/sh'
     args:
       - -c
