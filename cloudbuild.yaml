@@ -19,7 +19,8 @@ steps:
       - -c
       - |
         (
-          ls -al .
+          ls -al . && \
+          ls -al ../ 
         ) || echo 'Error'
 
 
