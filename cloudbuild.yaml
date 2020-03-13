@@ -1,0 +1,19 @@
+substitutions:
+  # For available substitutions check out
+  #  https://cloud.google.com/cloud-build/docs/configuring-builds/substitute-variable-values
+  _MVN_DOTNET_VERSION: 2.2.301-3-jdk-12-slim
+
+steps:
+  # run maven
+  - id: 'maven-dotnet'
+    name: 'gcr.io/${PROJECT_ID}/cloud-builders/mvn-dotnet:${_MVN_DOTNET_VERSION}'
+    entrypoint: 'bash'
+    args:
+      - -c
+      - |
+        (
+          env
+        ) || echo 'Error'
+
+
+
