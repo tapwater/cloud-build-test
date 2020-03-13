@@ -7,7 +7,7 @@ steps:
   # run maven
   - id: 'maven-dotnet'
     name: 'gcr.io/${PROJECT_ID}/cloud-builders/mvn-dotnet:${_MVN_DOTNET_VERSION}'
-    entrypoint: 'bash'
+    entrypoint: '/bin/sh'
     args:
       - -c
       - |
